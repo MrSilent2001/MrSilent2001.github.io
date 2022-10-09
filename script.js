@@ -131,4 +131,41 @@ setInterval(() => {
 }, 20);
 
 
+//==================================Form Validation============================
+
+function formValidate() {
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let tel = document.getElementById('tel').value;
+    let message = document.getElementById('message').value;
+
+    let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let telephoneformat = /^\+94\d{9}$/;
+
+    if(name == ""){
+        alert("Name must be Filled");
+    }
+    
+    if(email == ""){
+        alert("Email must be Filled");
+    }
+
+    if(!(email.match(mailformat))){
+        alert("Invalid Email Address");
+    }
+    
+    if(tel == ""){
+        alert("Telephone Number must be Filled");
+    }
+
+    if(!(tel.match(telephoneformat))){
+        alert("Invalid Phone Number");
+    }
+    
+    if(message == ""){
+        alert("Please insert the message!");
+    }
+    
+}
+
 
