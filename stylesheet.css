@@ -58,7 +58,7 @@
 }
 
 .main {
-    height: 300vh;
+    height: auto;
     width: auto;
     background: var(--primary-color);
     font-family: sans-serif;
@@ -70,15 +70,15 @@ h3 {
     color: var(--secondary-color);
 }
 
-h3{
+h3 {
     color: #000106;
 }
 
-h4{
+h4 {
     color: var(--colorA);
 }
 
-.hey{
+.hey {
     font-family: cursive;
     font-size: 1.5rem;
     color: var(--colorA);
@@ -104,6 +104,7 @@ li a {
     left: 0;
     z-index: 1;
 }
+
 nav ul {
     margin-top: -0.5rem;
     float: right;
@@ -133,15 +134,15 @@ nav ul li a:hover {
 }
 
 
-
 /* LOGO */
 .logo {
     font-weight: 900;
     font-size: 1.5rem;
     margin-left: 2rem;
     margin-bottom: 3.5rem;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
 .menu {
     display: flex;
     font-size: 18px;
@@ -241,7 +242,7 @@ span {
 }
 
 .info a {
-    background-color: #bd1913;
+    background-color: #c6140ee9;
     padding: 10px 18px;
     text-decoration: none;
     --colorB: #f1f1f1;
@@ -251,7 +252,8 @@ span {
 }
 
 .info a:hover {
-    background-color: #640d14;
+    transform: scale(1.1);
+    background-color: #ad0f1c;
     color: #fff;
 }
 
@@ -358,7 +360,7 @@ h1 {
 .qualification-tabs {
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: var(--mb-2);
+    margin-bottom: 2rem;
 }
 
 .qualification-button {
@@ -385,6 +387,7 @@ h1 {
 }
 
 .qualification-title {
+    margin-top: 2rem;
     color: var(--colorA);
 }
 
@@ -405,6 +408,7 @@ h1 {
 
 .qualification-rounder {
     display: inline-block;
+    margin-top: 2rem;
     width: 13px;
     height: 13px;
     background-color: var(--first-color);
@@ -419,7 +423,16 @@ h1 {
     transform: translate(6px, -7px);
 }
 
-table,th,td{
+table,tr,th,td{
+    color: var(--colorA);
+}
+
+th{
+    text-align: center;
+}
+/* table,
+th,
+td {
     border: 1px solid var(--colorA);
     text-align: center;
     width: 75%;
@@ -427,14 +440,15 @@ table,th,td{
     padding: 0.25rem;
 }
 
-th{
+th {
     margin-bottom: 1.5rem;
 }
 
-tr,td{
+tr,
+td {
     padding: 0.rem;
     width: max-content;
-}
+} */
 
 
 /*===============================Portfolio===============================*/
@@ -442,14 +456,18 @@ tr,td{
     height: auto;
     width: auto;
     background: var(--primary-color);
-    padding-top: 50%;
+    padding-top: 10%;
 }
 
 .portfolio-subtitle {
     display: block;
-    font-size: var(--font-medium);
+    font-size: 1.2rem;
     margin-bottom: var(--mb-3);
     text-align: center;
+}
+
+#myprojects{
+    margin-top: 5rem;
 }
 
 .portfolio-container {
@@ -645,30 +663,62 @@ svg {
     width: auto;
 }
 
-.project1 {
+.myProjects {
     cursor: pointer;
     height: 350px;
-    width: 100%;
+    width: auto;
     margin: 2.5%;
     border: 1px solid #6f2dbd;
+    background-color: #555;
+    border-radius: 10px;
+    background-size: cover;
+    box-shadow: 5px 5px 10px var(--colorA);
+}
+
+.myProjects:hover {
+    transform: scale(1.05);
+}
+
+.project-img {
+    height: 347px;
+    width: 100%;
     border-radius: 10px;
     background-size: cover;
 }
 
-.project2 {
-    cursor: pointer;
-    height: 350px;
-    width: 100%;
-    margin: 2.5%;
-    border: 1px solid #6f2dbd;
-    border-radius: 10px;
-    background-size: cover;
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.8);
+    /* Black see-through */
+    color: #f1f1f1;
+    width: 38.6rem;
+    transition: .5s ease;
+    opacity: 0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
-.project-img{
-    height: 325px;
-    width: 100%;
-    background-size: cover;
+.overlay:hover{
+    opacity: 1;
+}
+
+#project-title{
+    color: #f1f1f1;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+#project-desc{
+    color:#f1f1f1;
+    font-size: .9rem;
 }
 
 /*=============================Contact Me=============================*/
@@ -688,8 +738,8 @@ svg {
 .contact-image {
     margin-top: 10%;
     margin-right: 5%;
-    width: 600px;
-    height: 400px;
+    width: 700px;
+    height: 300px;
 }
 
 .contact-information {
@@ -710,7 +760,7 @@ h4 {
 }
 
 .contact-form {
-    width: 100%;
+    width: 70%;
 }
 
 

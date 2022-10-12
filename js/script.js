@@ -3,9 +3,9 @@ var icon = document.getElementById("icon");
 icon.onclick = function () {
     document.body.classList.toggle("dark-theme");
     if (document.body.classList.contains("dark-theme")) {
-        icon.src = "./imgs/sun.png";
+        icon.src = "./assets/sun.png";
     } else {
-        icon.src = "./imgs/moon.png";
+        icon.src = "./assets/moon.png";
     }
 }
 
@@ -157,8 +157,7 @@ function submitMessage(){
     swal({
         title: "Message Sent",
         text: "Your Message Delivered Successfully",
-        icon: "success",
-        closeOnClickOutside: "false"
+        icon: "success"
     });
 }
 
