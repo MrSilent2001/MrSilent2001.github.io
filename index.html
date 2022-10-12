@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dinuka Malitha</title>
     <link rel="stylesheet" href="stylesheet.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -47,7 +47,6 @@
 
         </div>
 
-
         <!--============================Home============================-->
 
         <div class="home">
@@ -58,7 +57,6 @@
                     <p>This is my official personal website to showcase my all works related to Full Stack <br> Software
                         Development and Web Development.</p>
                 </div>
-
                 <a href="Resume.pdf" download="Resume.pdf"><span class="cv">Download CV</span></a>
             </div>
 
@@ -472,16 +470,16 @@
         </div>
 
 
-        <!-- <span class="portfolio-subtitle">My Projects</span>
+        <span class="portfolio-subtitle">My Projects</span>
         <div class="projects ">
             <div class="project1 ">
-
+                <img src="assets/galadhari-img.png" alt="" class="project-img">
             </div>
 
             <div class="project2 ">
-
+                <img src="assets/e-doctor-img.png" alt="" class="project-img">
             </div>
-        </div> -->
+        </div>
     </div>
 
     <!--=========================Contact Me=========================-->
@@ -493,27 +491,27 @@
 
             <div class="contact-form">
                 <h4>Drop Me a Message...</h4>
-                <form action="" method="get" class="contact-info">
+                <form action="" method="get" class="contact-info" id="userForm">
                     <div class="mb-3 form-fields">
                         <label for="exampleFormControlInput1" class="form-label">Name:</label>
-                        <input type="text" class="form-control" id="name"
-                            placeholder="Enter your Name" required>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your Name" required>
                     </div>
                     <div class="mb-3 form-fields">
                         <label for="exampleFormControlInput1" class="form-label">Email address:</label>
-                        <input type="email" class="form-control" id="email"
-                            placeholder="name@example.com" required>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
                     </div>
                     <div class="mb-3 form-fields">
                         <label for="exampleFormControlInput1" class="form-label">Contact Number:</label>
-                        <input type="text" class="form-control" id="tel"
-                            placeholder="Enter your Contact Number" required>
+                        <input type="text" class="form-control" id="tel" placeholder="Enter your Contact Number"
+                            required>
                     </div>
                     <div class="mb-3 form-fields">
                         <label for="exampleFormControlTextarea1" class="form-label">Message:</label>
                         <textarea class="form-control" id="message" rows="5" required></textarea>
                     </div>
-                    <input type="submit" value="Send" class="btn btn-primary btn-lg col-12" onclick="formValidate()"></input>
+                    <input type="submit" value="Send" id="
+                    submitMessage" class="btn btn-primary btn-lg col-12"
+                        onsubmit="formValidate()"></input>
                 </form>
             </div>
         </div>
@@ -539,7 +537,55 @@
 
 
     </div>
-    <script src="script.js"></script>
+
+    <!--Main JS-->
+    <script src="js/script.js"></script>
+
+    <!--Alert box-->
+    <script src="js/sweetalert.min.js"></script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import {initializeApp} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+        import {getDatabase, set, ref} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+    
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCt29N5cfGXEfYoQnd6Vlf5ii1c-t-Cl4w",
+            authDomain: "portfolio-database-307e3.firebaseapp.com",
+            databaseURL: "https://portfolio-database-307e3-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "portfolio-database-307e3",
+            storageBucket: "portfolio-database-307e3.appspot.com",
+            messagingSenderId: "256438255253",
+            appId: "1:256438255253:web:9173cfac543250ba1c259c"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        document.getElementById("userForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            let name = document.getElementById("name").value;
+            let mail = document.getElementById("email").value;
+            let tel = document.getElementById("tel").value;
+            let message = document.getElementById("message").value;
+
+            set(ref(db, 'users/' + name), {
+                email: mail,
+                tel: tel,
+                message: message
+            });
+
+            clearTextField();
+
+            submitMessage();
+            
+        });
+
+    </script>
 </body>
 
 </html>

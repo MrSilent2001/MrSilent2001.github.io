@@ -646,19 +646,29 @@ svg {
 }
 
 .project1 {
-    height: 450px;
-    width: 450px;
+    cursor: pointer;
+    height: 350px;
+    width: 100%;
     margin: 2.5%;
     border: 1px solid #6f2dbd;
     border-radius: 10px;
+    background-size: cover;
 }
 
 .project2 {
-    height: 450px;
-    width: 450px;
+    cursor: pointer;
+    height: 350px;
+    width: 100%;
     margin: 2.5%;
     border: 1px solid #6f2dbd;
     border-radius: 10px;
+    background-size: cover;
+}
+
+.project-img{
+    height: 325px;
+    width: 100%;
+    background-size: cover;
 }
 
 /*=============================Contact Me=============================*/
