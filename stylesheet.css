@@ -11,6 +11,7 @@
     --secondary-color: #212121;
     --colorA: #01161e;
     --colorB: #F1F1F1;
+    --colorC: #e29af8;
 
     /* Change favorite color */
     --hue-color: 250;
@@ -43,7 +44,8 @@
     --primary-color: #000106;
     --secondary-color: #fff;
     --colorA: #fbfefb;
-    --colorB: #fff;
+    --colorB: #8E8E8E;
+    --colorC: #8e8e8e;
 }
 
 #icon {
@@ -143,6 +145,16 @@ nav ul li a:hover {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+.logo-img{
+    cursor: pointer;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    margin-left: 2.5rem;
+    width: 100px;
+    float: left;
+}
+
 .menu {
     display: flex;
     font-size: 18px;
@@ -168,7 +180,7 @@ input[type=checkbox] {
 }
 
 /* APPLYING MEDIA QUERIES */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .menu {
         display: none;
         position: absolute;
@@ -206,7 +218,7 @@ input[type=checkbox] {
     .dropdown li:hover {
         background-color: #4c9e9e;
     }
-}
+} */
 
 /*===============================Home===============================*/
 
@@ -295,7 +307,7 @@ span {
 }
 
 .social-links a:hover {
-    color: #6f2dbd;
+    color: #f86548;
 }
 
 .cv {
@@ -321,6 +333,7 @@ span {
     border-radius: 10px;
     padding: 2%;
     margin: 7.5% 2.5%;
+    box-shadow: 5px 5px 10px var(--colorC);
 }
 
 .description p,
@@ -350,6 +363,13 @@ h1 {
 
 
 /*==================================Qualifications==================================*/
+.qualification-img{
+    width: 350px;
+    position: absolute;
+    left: 15%;
+    top: 285%;
+}
+
 .qualifications {
     padding-top: 8%;
     height: auto;
@@ -364,7 +384,7 @@ h1 {
 }
 
 .qualification-button {
-    font-size: var(--h3-font-size);
+    font-size: 1.25rem;
     font-weight: var(--font-medium);
     margin-bottom: 2.5%;
     color: var(--colorA);
@@ -396,7 +416,7 @@ h1 {
     font-size: var(--small-font-size);
     margin-bottom: 1rem;
     text-align: center;
-    color: var(--colorA);
+    color: #6f2dbd;
 }
 
 
@@ -430,25 +450,15 @@ table,tr,th,td{
 th{
     text-align: center;
 }
-/* table,
-th,
-td {
-    border: 1px solid var(--colorA);
+
+
+.table{
+    width: 75% !important;
+}
+
+.table-heading,td{
     text-align: center;
-    width: 75%;
-    margin-bottom: 2rem;
-    padding: 0.25rem;
 }
-
-th {
-    margin-bottom: 1.5rem;
-}
-
-tr,
-td {
-    padding: 0.rem;
-    width: max-content;
-} */
 
 
 /*===============================Portfolio===============================*/
@@ -461,7 +471,7 @@ td {
 
 .portfolio-subtitle {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     margin-bottom: var(--mb-3);
     text-align: center;
 }
@@ -495,6 +505,11 @@ td {
     align-items: center;
     justify-content: center;
     position: relative;
+    box-shadow: 5px 5px 10px var(--colorC);
+}
+
+.skill:hover{
+    transform: scale(1.2);
 }
 
 .skill-img {
@@ -794,5 +809,5 @@ h4 {
 }
 
 .footer-social-links a:hover {
-    color: #6f2dbd;
+    color: #f86548;
 }
